@@ -1,0 +1,1 @@
+int TestCompanyUniverse_main();

@@ -1,0 +1,58 @@
+# Static or shared libraries should be built (STATIC or SHARED)?
+LibType := SHARED
+
+# Select optimization (-O or -g). -O will be automatically bumped up to the 
+# highest level of optimization the compiler supports. If want something in
+# between then specify the exact level you want, e.g., -O1 or -O2
+#OptLevel := -O2
+#OptLevel := -O
+OptLevel := -g
+
+LIBNAME := aiMathUtils
+
+LIBSRC := 
+LIBSRC += pkgMathUtils.cpp
+LIBSRC += MathUtils.cpp
+LIBSRC += MatrixProcessor.cpp
+LIBSRC += MatrixCentralizer.cpp
+LIBSRC += PanelProcessor.cpp
+LIBSRC += MatrixWinStdProcessor.cpp
+LIBSRC += ResidualProcessor.cpp
+
+
+#
+
+
+
+##############################################################################
+# You should not need to edit below this line.
+##############################################################################
+# The location of the customized Makefiles
+include ${MakefileDir}/Makefile.coin
+include ${MakefileDir}/Makefile.location
+ifeq ($(OptLevel),-g)
+#     CXXFLAGS += -DAsxaiMathUtils_DEBUG
+endif
+#    CXXFLAGS += -DAsxaiMathUtils_DEBUG
+
+#    CXXFLAGS += -pg
+export ExtraIncDir  := ${OsiIncDir} ${CoinIncDir} ${MosekIncDir}
+export ExtraLibDir  := ${OsiLibDir} ${CoinLibDir} ${MosekLibDir}
+export ExtraLibName := ${OsiLibName} ${CoinLibName} ${MosekLibName}
+export ExtraDefine  := ${OsiDefine} ${CoinDefine} ${MosekDefine}
+
+
+export LibType OptLevel LIBNAME LIBSRC 
+
+###############################################################################
+
+.DELETE_ON_ERROR:
+
+.PHONY: default install library
+
+default: install
+
+install library :
+	$(MAKE) -f ${MakefileDir}/Makefile.lib $@
+
+

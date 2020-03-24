@@ -1,0 +1,8 @@
+#Usage: cmd date setup-name
+mkdir dpkg_$2_$1
+mkdir dpkg_$2_$1/tmp
+mkdir dpkg_$2_$1/tmpkernel
+mkdir dpkg_$2_$1/forecasts
+cp -R ./tmp/*$1* ./dpkg_$2_$1/tmp
+cp -R ./tmpkernel/*$1* ./dpkg_$2_$1/tmpkernel
+cp -R ./forecasts/*$1* ./dpkg_$2_$1/forecasts

@@ -1,0 +1,1 @@
+int TestCompanyIdentifier_main();

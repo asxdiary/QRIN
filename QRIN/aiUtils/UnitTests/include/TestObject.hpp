@@ -1,0 +1,1 @@
+int TestObject_main();

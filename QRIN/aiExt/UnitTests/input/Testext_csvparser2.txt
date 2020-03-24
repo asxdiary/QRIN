@@ -1,0 +1,6 @@
+key|value
+5|4
+ai|3
+abce|3
+3|as
+2.5|hh

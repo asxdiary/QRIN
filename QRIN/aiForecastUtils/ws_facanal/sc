@@ -1,0 +1,72 @@
+#./Linux-O/UnitTests corel /home/asx/COIN_Greco8_mna_OrthoF_rf2recvix_mlcg2l3e/aiForecastGen/UnitTests/forecast.raw.c.0/ /home/asx/COIN_Greco8_mna_OrthoF_rf2recvix_mlcg2l3e_2018/aiForecastGen/UnitTests/forecast.raw.c.0/
+#mv output/anal.csv output/raw.csv
+#./Linux-O/UnitTests corel /home/asx/COIN_Greco8_mna_OrthoF_rf2recvix_mlcg2l3e/aiForecastGen/UnitTests/forecast.mlcge.c.0/ /home/asx/COIN_Greco8_mna_OrthoF_rf2recvix_mlcg2l3e_2018/aiForecastGen/UnitTests/forecast.mlcge.c.0/
+#mv output/anal.csv output/mlcge.csv
+#./Linux-O/UnitTests bianal /home/asx/COIN/aiForecastUtils/ws_EEEA/EEEAI.forecast.raw.c.0/ /home/asx/COIN/aiForecastUtils/ws_EEEA/esterr_EE/esterr ./output/bianal.csv
+
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/esterr_EE/esterr ./output/EE.csv
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/esterr_EA/esterr ./output/EA.csv
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/esterr_hyb/esterr ./output/hyb.csv
+
+#./Linux-O/UnitTests csanal /home/asx/COIN/aiForecastUtils/ws_EEEA/abs.EEmEA/dm /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_EE_esterr_EA/abserr ./output/csanal.csv
+
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_EA_esterr_hybest_EEEALR/abserr ./output/abserr_esterr_EA_esterr_hybest_EEEALR.unianal.csv
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_EE_esterr_hybest_EEEALR/abserr ./output/abserr_esterr_EE_esterr_hybest_EEEALR.unianal.csv
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_hyb2_esterr_hybest_EEEALR/abserr ./output/abserr_esterr_hyb2_esterr_hybest_EEEALR.unianal.csv
+
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_EA_esterr_EE_lasso/abserr ./output/abserr_esterr_EA_esterr_EE_lasso.unianal.csv
+
+#./Linux-O/UnitTests csanal /home/asx/COIN/aiForecastUtils/ws_EEEA/esterr_EE/esterr /home/asx/COIN/aiForecastUtils/ws_EEEA/EEmEA/esterr output/csanal.csv
+
+#./Linux-O/UnitTests bianal /home/asx/COIN/aiForecastUtils/ws_EEEA/abs.EEmEA/dm  /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_EA_esterr_hybest_lasso/abserr ./output/abserr_esterr_EA_esterr_hybest_lasso.csv & 
+#./Linux-O/UnitTests bianal /home/asx/COIN/aiForecastUtils/ws_EEEA/abs.EEmEA/dm  /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_EE_esterr_EA/abserr ./output/abserr_esterr_EE_esterr_EA.csv & 
+
+#./Linux-O/UnitTests wtcsanal /home/asx/COIN/aiForecastUtils/ws_EEEA/esterr_EE/esterr /home/asx/COIN/aiForecastUtils/ws_EEEA/EEmEA/esterr /home/asx/COIN/aiForecastUtils/ws_EEEA/Delta/ output/csanal.csv 3
+
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_EE_esterr_hybest_EEEAL2HG/abserr ./output/abserr_esterr_EE_esterr_hybest_EEEAL2HG.unianal.csv
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_EA_esterr_hybest_EEEAL2HG/abserr ./output/abserr_esterr_EA_esterr_hybest_EEEAL2HG.unianal.csv
+#./Linux-O/UnitTests unianal /home/asx/COIN/aiForecastUtils/ws_EEEA/abserr_esterr_hyb2_esterr_hybest_EEEAL2HG/abserr ./output/abserr_esterr_hyb2_esterr_hybest_EEEAL2HG.unianal.csv
+
+#./Linux-O/UnitTests csanal /home/asx/COIN/aiForecastUtils/ws_EEEA/est_EE/ /home/asx/COIN/aiForecastUtils/ws_EEEA/est_HG/ output/csanal_EE_HG.csv
+#./Linux-O/UnitTests csanal /home/asx/COIN/aiForecastUtils/ws_EEEA/est_EA/ /home/asx/COIN/aiForecastUtils/ws_EEEA/est_HG/ output/csanal_EA_HG.csv
+#./Linux-O/UnitTests csanal /home/asx/COIN/aiForecastUtils/ws_EEEA/est_hybest_EEEAL2HG/dm /home/asx/COIN/aiForecastUtils/ws_EEEA/est_HG/ output/csanal_EEEAL2HG_HG.csv
+
+#./Linux-O/UnitTests wtcsanal /app/home/asx/COIN/aiForecastUtils/ws_EEEA/LAZ2/EEmEA/dm /app/home/asx/COIN/aiForecastUtils/ws_EEEA/LAZ2/EEmEA/dm /app/home/asx/COIN/aiForecastUtils/ws_EEEA/LAZ2/Delta/ ./output/EEmEA.csv
+#./Linux-O/UnitTests csanal /app/home/asx/COIN/aiForecastUtils/ws_EEEA/LAZ2/EEmEA/dm /app/home/asx/COIN/aiForecastUtils/ws_EEEA/LAZ2/EEmEA/dm ./output/EEmEA.csv
+
+#./Linux-O/UnitTests csanal /app/home/asx/COIN/aiForecastUtils/ws_EEEA/jan_2019/est_EE/  /app/home/asx/COIN/aiForecastUtils/ws_EEEA/jan_2019/est_EA/  ./output/csanal.csv
+
+#./Linux-O/UnitTests csanal /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG/ /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG_VarConfig2/ ./output/csanal.csv
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9e_EEEAI_SIG/aiForecastGen/UnitTests-AllHistory/forecast.raw.c.0/  /app/home/asx/COIN_G9e_EEEAI_SIG_VarConfig2/aiForecastGen/UnitTests-AllHistory/forecast.raw.c.0/ ./output/raw_csanal.csv
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9e_EEEAI_SIG/aiForecastGen/UnitTests-AllHistory/forecast.mlcge.c.0/  /app/home/asx/COIN_G9e_EEEAI_SIG_VarConfig2/aiForecastGen/UnitTests-AllHistory/forecast.mlcge.c.0/ ./output/mlcge_csanal.csv
+
+
+#./Linux-O/UnitTests diffanal  /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG/ /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG_l18i_cQ_hg/ ./output/G9e_EEEAI_SIG_diffanal.csv
+#./Linux-O/UnitTests diffanal  /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG_VarConfig2/ /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG_l18i_cQ_hg/ ./output/G9e_EEEAI_SIG_VarConfig2_diffanal.csv
+
+#./Linux-O/UnitTests diffanal  /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EE/ /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG_l18i_cQ_hg/ ./output/G9e_EE.csv
+#./Linux-O/UnitTests diffanal  /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EE_SIG_VarConfig2/ /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG_l18i_cQ_hg/ ./output/G9e_EE_SIG_VarConfig2.csv
+
+#./Linux-O/UnitTests csanal /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EE/ /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG_l18i_cQ_hg/ ./output/G9e_EE.csv
+#./Linux-O/UnitTests csanal /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EE_SIG_VarConfig2/ /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/VarConfig2/G9e_EEEAI_SIG_l18i_cQ_hg/ ./output/G9e_EE_SIG_VarConfig2.csv
+
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP/aiForecastGen/UnitTests-AllHistory/forecast.raw.c.0/ /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP/aiForecastGen/UnitTests-AllHistory/tmpkernel/fcfk.fgak.algo_exec_g.ug ./output/csanal.csv
+#./Linux-O/UnitTests csanal /app/home/asx/db/greco9f/holdings/ /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP/aiForecastGen/UnitTests-AllHistory/tmpkernel/fcfk.fgak.algo_exec_g.ug ./output/csanal.csv
+#./Linux-O/UnitTests univfilter ./tmp/vanilla_betas_simplified2/ /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP/aiForecastGen/UnitTests-AllHistory/forecast.raw.c.0/ ./tmp/vanilla_betas_simplified2_rawuniv/
+
+#./Linux-O/UnitTests univfilter ./tmp/vanilla_betas_simplified2/ /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP/aiForecastGen/UnitTests-AllHistory/forecast.raw.c.0/ ./tmp/vanilla_betas_simplified2_asx/
+
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP_NextGenBeta/aiForecastGen/UnitTests/forecast.raw.c.0/ /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP/aiForecastGen/UnitTests-AllHistory/forecast.raw.c.0/ ./output/csanal.csv
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP_NextGenBeta/aiForecastGen/UnitTests/forecast.mlcge.c.0/ /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP/aiForecastGen/UnitTests-AllHistory/forecast.mlcge.c.0/ ./output/csanal.csv
+
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9g_strawman/aiForecastGen/UnitTests/forecast.mlcge.c.0/ /app/home/asx/COIN_G9e_EEEAI_SIG_OrthoNIOP/aiForecastGen/UnitTests-AllHistory/forecast.mlcge.c.0/ ./output/csanal.csv
+
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9i_strawman/aiForecastGen/UnitTests/forecast.mlcge.c.0/ /app/home/asx/COIN_G9g_strawman/aiForecastGen/UnitTests/forecast.mlcge.c.0/ ./output/csanal.mlcge.csv
+
+#./Linux-O/UnitTests cc /app/home/asx/COIN_G9n_strawman/aiForecastGen/UnitTests-AllHistory-20051231-20190630/tmpkernel/TDelta/ ./output/Tcc.csv
+
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9n_IGtheta6/aiForecastGen/UnitTests-AllHistory/forecast.raw.c.0/ /app/home/asx/COIN_G9n_IGtheta6_AIETL2/aiForecastGen/UnitTests-AllHistory/forecast.raw.c.0/ ./output/raw.csanal.csv
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9n_IGtheta6/aiForecastGen/UnitTests-AllHistory/forecast.mlcge.c.0/ /app/home/asx/COIN_G9n_IGtheta6_AIETL2/aiForecastGen/UnitTests-AllHistory/forecast.mlcge.c.0/ ./output/mlcge.csanal.csv
+
+#./Linux-O/UnitTests csanal /app/home/asx/COIN_G9n_IGtheta6/aiForecastGen/UnitTests-AllHistory/forecast.raw.c.0/ /app/home/asx/tmpdb/MTM.EoM/ ./output/raw-MTM.csv
+./Linux-O/UnitTests csanal /app/home/asx/COIN/aiForecastUtils/ws_EEEAI/tmp/glam/ /app/home/asx/tmpdb/MTM.EoM/ ./output/raw-MTM.csv

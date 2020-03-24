@@ -1,0 +1,22 @@
+What does this project do?
+
+This is a collection of mathematical and statistical utilities that 
+can be used for systematic analysis of large data sets.
+
+Why is this project useful?
+
+The attached utilities streamline a variety of functionalities for 
+expedited code development.
+
+How do I get started?
+- Add QRIN/progs directory to the PATH
+- Run ./sc1 in the COIN directory
+- If there were no unpleasant messages, the code compilation and unit
+  tests were succesfull
+- Enjoy!
+
+Where can I get more help, if I need it?
+
+There is very limited support for these packages. Please
+email asxdiary@gmail.com if you have any questions.
+

@@ -1,0 +1,5 @@
+cd $1/UnitTests
+echo "$(basename $BASH_SOURCE) $1/UnitTests starting"
+make > ~/tmp/junk
+echo "$(basename $BASH_SOURCE) $1/UnitTests done"
+cd ../..

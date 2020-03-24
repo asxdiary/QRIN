@@ -1,0 +1,4 @@
+- add GrowthAccount (object: DoubleDbAccount* vala)
+- add AGrowthAccount
+- add GGrowthAccount
+- add DGrowthAccount

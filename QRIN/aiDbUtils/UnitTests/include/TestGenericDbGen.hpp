@@ -1,0 +1,1 @@
+int TestGenericDbGen_main();

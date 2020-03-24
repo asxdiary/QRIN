@@ -1,0 +1,124 @@
+# Static or shared libraries should be built (STATIC or SHARED)?
+LibType := SHARED
+
+# Select optimization (-O or -g). -O will be automatically bumped up to the 
+# highest level of optimization the compiler supports. If want something in
+# between then specify the exact level you want, e.g., -O1 or -O2
+#OptLevel := -O2
+#OptLevel := -O
+OptLevel := -g
+
+LIBNAME := aiAcctFields
+
+LIBSRC := 
+LIBSRC += pkgAcctFields.cpp
+LIBSRC += AcctFieldsUtils.cpp
+LIBSRC += TemplatePositionAccount.cpp
+LIBSRC += TemplateFlowAccount.cpp
+
+LIBSRC += GICSAccount.cpp
+
+LIBSRC += TotalAssetsAccount.cpp
+LIBSRC += CashShortTermInvestmentsAccount.cpp
+LIBSRC += ReceivablesNetAccount.cpp
+LIBSRC += InventoriesNetAccount.cpp
+LIBSRC += PrepaidOtherCurrentAssetsAccount.cpp
+LIBSRC += CurrentAssetsAccount.cpp
+LIBSRC += PropertyPlantEquipmentAccount.cpp
+LIBSRC += IntangibleAssetsAccount.cpp
+LIBSRC += LongTermInvestmentsAccount.cpp
+LIBSRC += DeferredPrepaidExpensesAccount.cpp
+LIBSRC += AccountsPayableAccount.cpp
+LIBSRC += DebtObligationsCurrentAccount.cpp
+LIBSRC += AccruedOtherCurrentLiabilitiesAccount.cpp
+LIBSRC += CurrentLiabilitiesAccount.cpp
+LIBSRC += DebtObligationsLongTermAccount.cpp
+LIBSRC += DeferredOtherNoncurrentLiabilitiesAccount.cpp
+LIBSRC += TotalLiabilitiesAccount.cpp
+LIBSRC += MinorityInterestAccount.cpp
+LIBSRC += PreferredEquityAccount.cpp
+LIBSRC += BookValueAccount.cpp
+LIBSRC += TotalEquityCapitalAccount.cpp
+LIBSRC += LiabilitiesStockholdersEquityAccount.cpp
+LIBSRC += UnconsolidatedInvestmentsAccount.cpp
+LIBSRC += BenefitPlansFundingAccount.cpp
+LIBSRC += LegalEnvironmentalAROAccount.cpp
+LIBSRC += OffBalanceSheetFinancingAccount.cpp
+LIBSRC += OperatingRevenueAccount.cpp
+LIBSRC += CostRevenueAccount.cpp
+LIBSRC += GrossProfitAccount.cpp
+LIBSRC += SGAOtherOperatingAccount.cpp
+LIBSRC += SellingGeneralAdministrativeAccount.cpp
+LIBSRC += ResearchDevelopmentAccount.cpp
+LIBSRC += DepreciationAmortizationUnclassifiedOperatingAccount.cpp
+LIBSRC += ContingentOtherOperatingExpensesAccount.cpp
+LIBSRC += RecurringEBITAccount.cpp
+LIBSRC += EBITDAAccount.cpp
+LIBSRC += NonrecurringItemsOperatingAccount.cpp
+LIBSRC += OperatingProfitAccount.cpp
+LIBSRC += NonOperatingIncomeExpenseAccount.cpp
+LIBSRC += NetInterestExpenseAccount.cpp
+LIBSRC += EarningsLossesEquityInvestmentsAccount.cpp
+LIBSRC += NonoperatingGainsAccount.cpp
+LIBSRC += IncomeBeforeIncomeTaxesAccount.cpp
+LIBSRC += ProvisionIncomeTaxesAccount.cpp
+LIBSRC += MinorityInterestParticipationNetTaxEffectAccount.cpp
+LIBSRC += PreferredStockDividendsOtherAdjustmentsAccount.cpp
+LIBSRC += NonContinuingOperationsItemsAccount.cpp
+LIBSRC += NetIncomeAccount.cpp
+LIBSRC += CompEarningsAccount.cpp
+LIBSRC += WeightedAverageDilutedSharesAccount.cpp
+LIBSRC += EPSdilutedAccount.cpp
+LIBSRC += EPSAccount.cpp
+LIBSRC += COMPSdilutedAccount.cpp
+LIBSRC += DividendsPerShareAccount.cpp
+LIBSRC += ChangesWorkingCapitalNetAccount.cpp
+LIBSRC += CashFlowOperationsAccount.cpp
+LIBSRC += CapitalExpendituresAccount.cpp
+LIBSRC += AcquisitionsDivestituresNetAccount.cpp
+LIBSRC += NetCashFlowsProvidedUsedInvestingActivitiesAccount.cpp
+LIBSRC += NetChangeDebtAccount.cpp
+LIBSRC += NetChangeEquityAccount.cpp
+LIBSRC += PaymentsCashDividendsAccount.cpp
+LIBSRC += OtherCashFlowsFinancingActivitiesNetAccount.cpp
+LIBSRC += NetCashFlowsProvidedUsedFinancingActivitiesAccount.cpp
+LIBSRC += EffectExchangeRateCashCashEquivalentsAccount.cpp
+LIBSRC += IncreaseDecreaseCashEquivalentsNetAccount.cpp
+LIBSRC += CashTaxesPaidAccount.cpp
+
+#
+
+
+
+##############################################################################
+# You should not need to edit below this line.
+##############################################################################
+# The location of the customized Makefiles
+include ${MakefileDir}/Makefile.coin
+include ${MakefileDir}/Makefile.location
+ifeq ($(OptLevel),-g)
+#     CXXFLAGS += -DAsxaiAcctFields_DEBUG
+endif
+#    CXXFLAGS += -DAsxaiAcctFields_DEBUG
+
+#    CXXFLAGS += -pg
+export ExtraIncDir  := ${OsiIncDir} ${CoinIncDir} ${MosekIncDir}
+export ExtraLibDir  := ${OsiLibDir} ${CoinLibDir} ${MosekLibDir}
+export ExtraLibName := ${OsiLibName} ${CoinLibName} ${MosekLibName}
+export ExtraDefine  := ${OsiDefine} ${CoinDefine} ${MosekDefine}
+
+
+export LibType OptLevel LIBNAME LIBSRC 
+
+###############################################################################
+
+.DELETE_ON_ERROR:
+
+.PHONY: default install library
+
+default: install
+
+install library :
+	$(MAKE) -f ${MakefileDir}/Makefile.lib $@
+
+

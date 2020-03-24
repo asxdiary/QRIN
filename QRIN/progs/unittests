@@ -1,0 +1,6 @@
+echo "$(basename $BASH_SOURCE) $1 starting"
+cd $1
+cd UnitTests
+./Linux-g/UnitTests
+cd ../..
+echo "$(basename $BASH_SOURCE) $1 done"

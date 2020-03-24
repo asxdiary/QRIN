@@ -1,0 +1,287 @@
+###############################################################################
+#                                                                             #
+# Above the ### Locations ### line comment out everything that you dont want  #
+# to build/use (or in case of a system lib, like zlib).                       #
+#                                                                             #
+# If any of the libraries/headers is at a non-standard location (i.e., not    #
+# in COIN/{lib,include} or in /usr/{lib,include}) then specify below the      #
+# ### Locations ### line where could it be found.                             #
+#                                                                             #
+###############################################################################
+
+CoinDir ?= ${LSAHOME}/QRIN
+
+CoinLibsDefined :=
+
+CoinLibsDefined += COIN_liblapack
+CoinLibsDefined += COIN_libgsl
+CoinLibsDefined += COIN_libCoin
+
+CoinLibsDefined += COIN_libaiExt
+CoinLibsDefined += COIN_libaiUtils
+CoinLibsDefined += COIN_libaiMath
+CoinLibsDefined += COIN_libaiStat
+CoinLibsDefined += COIN_libaiMathUtils
+CoinLibsDefined += COIN_libaiStatUtils
+CoinLibsDefined += COIN_libaiR
+CoinLibsDefined += COIN_libaiws
+CoinLibsDefined += COIN_libaiDb
+CoinLibsDefined += COIN_libaiDbAccounts
+CoinLibsDefined += COIN_libaiDbUtils
+CoinLibsDefined += COIN_libaiFin
+CoinLibsDefined += COIN_libaiFinUtils
+CoinLibsDefined += COIN_libaiAcctDb
+CoinLibsDefined += COIN_libaiAcctFields
+CoinLibsDefined += COIN_libaiAcctVars
+CoinLibsDefined += COIN_libaiAcctDbUtils
+CoinLibsDefined += COIN_libaiMarketFields
+CoinLibsDefined += COIN_libaiMarketVars
+CoinLibsDefined += COIN_libaiMarketDbUtils
+CoinLibsDefined += COIN_libaiForecastGen
+CoinLibsDefined += COIN_libaiReporting
+CoinLibsDefined += COIN_libaiResearch
+CoinLibsDefined += COIN_libaiForecastDb
+CoinLibsDefined += COIN_libaiForecastFields
+CoinLibsDefined += COIN_libaiForecastUtils
+CoinLibsDefined += COIN_libaiForecastDbUtils
+
+###############################################################################
+
+ifneq ($(filter COIN_libCoin,$(CoinLibsDefined)),)
+	export CoinIncDir  := ${CoinDir}/include
+	export CoinLibDir  := ${CoinDir}/lib
+	export CoinLibName := libCoin$(SHARED_LIBEXT)
+	export CoinDefine  := COIN_HAS_COIN
+endif
+
+###############################################################################
+#External Softwares
+
+ifneq ($(filter COIN_liblapack,$(CoinLibsDefined)),)
+	export lapackIncDir  := 
+	export lapackLibDir  := /usr/lib
+	export lapackLibName := liblapack$(SHARED_LIBEXT)
+	export lapackDefine  :=
+endif
+
+
+ifneq ($(filter COIN_libgsl,$(CoinLibsDefined)),)
+	export gslIncDir  := /usr/include/gsl
+	export gslLibDir  := /usr/lib
+	export gslLibName := libgsl$(SHARED_LIBEXT)
+	export gslDefine  :=
+endif
+
+
+###############################################################################
+
+ifneq ($(filter COIN_libaiUtils,$(CoinLibsDefined)),)
+	export aiUtilsIncDir  := ${CoinIncDir}
+	export aiUtilsLibDir  := ${CoinLibDir}
+	export aiUtilsLibName := libaiUtils$(SHARED_LIBEXT)
+	export aiUtilsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiExt,$(CoinLibsDefined)),)
+	export aiExtIncDir  := ${CoinIncDir}
+	export aiExtLibDir  := ${CoinLibDir}
+	export aiExtLibName := libaiExt$(SHARED_LIBEXT)
+	export aiExtDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiMath,$(CoinLibsDefined)),)
+	export aiMathIncDir  := ${CoinIncDir}
+	export aiMathLibDir  := ${CoinLibDir}
+	export aiMathLibName := libaiMath$(SHARED_LIBEXT)
+	export aiMathDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiStat,$(CoinLibsDefined)),)
+	export aiStatIncDir  := ${CoinIncDir}
+	export aiStatLibDir  := ${CoinLibDir}
+	export aiStatLibName := libaiStat$(SHARED_LIBEXT)
+	export aiStatDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiMathUtils,$(CoinLibsDefined)),)
+	export aiMathUtilsIncDir  := ${CoinIncDir}
+	export aiMathUtilsLibDir  := ${CoinLibDir}
+	export aiMathUtilsLibName := libaiMathUtils$(SHARED_LIBEXT)
+	export aiMathUtilsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiStatUtils,$(CoinLibsDefined)),)
+	export aiStatUtilsIncDir  := ${CoinIncDir}
+	export aiStatUtilsLibDir  := ${CoinLibDir}
+	export aiStatUtilsLibName := libaiStatUtils$(SHARED_LIBEXT)
+	export aiStatUtilsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiMosek,$(CoinLibsDefined)),)
+	export aiMosekIncDir  := ${CoinIncDir}
+	export aiMosekLibDir  := ${CoinLibDir}
+	export aiMosekLibName := libaiMosek$(SHARED_LIBEXT)
+	export aiMosekDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiMlpack,$(CoinLibsDefined)),)
+	export aiMlpackIncDir  := ${CoinIncDir}
+	export aiMlpackLibDir  := ${CoinLibDir}
+	export aiMlpackLibName := libaiMlpack$(SHARED_LIBEXT)
+	export aiMlpackDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiR,$(CoinLibsDefined)),)
+	export aiRIncDir  := ${CoinIncDir}
+	export aiRLibDir  := ${CoinLibDir}
+	export aiRLibName := libaiR$(SHARED_LIBEXT)
+	export aiRDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiws,$(CoinLibsDefined)),)
+	export aiwsIncDir  := ${CoinIncDir}
+	export aiwsLibDir  := ${CoinLibDir}
+	export aiwsLibName := libaiws$(SHARED_LIBEXT)
+	export aiwsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiFin,$(CoinLibsDefined)),)
+   export aiFinIncDir  := ${CoinIncDir}
+   export aiFinLibDir  := ${CoinLibDir}
+   export aiFinLibName := libaiFin$(SHARED_LIBEXT)
+   export aiFinDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiReporting,$(CoinLibsDefined)),)
+   export aiReportingIncDir  := ${CoinIncDir}
+   export aiReportingLibDir  := ${CoinLibDir}
+   export aiReportingLibName := libaiReporting$(SHARED_LIBEXT)
+   export aiReportingDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiDb,$(CoinLibsDefined)),)
+   export aiDbIncDir  := ${CoinIncDir}
+   export aiDbLibDir  := ${CoinLibDir}
+   export aiDbLibName := libaiDb$(SHARED_LIBEXT)
+   export aiDbDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiAcctDb,$(CoinLibsDefined)),)
+   export aiAcctDbIncDir  := ${CoinIncDir}
+   export aiAcctDbLibDir  := ${CoinLibDir}
+   export aiAcctDbLibName := libaiAcctDb$(SHARED_LIBEXT)
+   export aiAcctDbDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiAcctFields,$(CoinLibsDefined)),)
+   export aiAcctFieldsIncDir  := ${CoinIncDir}
+   export aiAcctFieldsLibDir  := ${CoinLibDir}
+   export aiAcctFieldsLibName := libaiAcctFields$(SHARED_LIBEXT)
+   export aiAcctFieldsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiAcctFields,$(CoinLibsDefined)),)
+   export aiAcctFieldsIncDir  := ${CoinIncDir}
+   export aiAcctFieldsLibDir  := ${CoinLibDir}
+   export aiAcctFieldsLibName := libaiAcctFields$(SHARED_LIBEXT)
+   export aiAcctFieldsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiDbUtils,$(CoinLibsDefined)),)
+   export aiDbUtilsIncDir  := ${CoinIncDir}
+   export aiDbUtilsLibDir  := ${CoinLibDir}
+   export aiDbUtilsLibName := libaiDbUtils$(SHARED_LIBEXT)
+   export aiDbUtilsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiAcctDbUtils,$(CoinLibsDefined)),)
+   export aiAcctDbUtilsIncDir  := ${CoinIncDir}
+   export aiAcctDbUtilsLibDir  := ${CoinLibDir}
+   export aiAcctDbUtilsLibName := libaiAcctDbUtils$(SHARED_LIBEXT)
+   export aiAcctDbUtilsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiAcctVars,$(CoinLibsDefined)),)
+   export aiAcctVarsIncDir  := ${CoinIncDir}
+   export aiAcctVarsLibDir  := ${CoinLibDir}
+   export aiAcctVarsLibName := libaiAcctVars$(SHARED_LIBEXT)
+   export aiAcctVarsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiResearch,$(CoinLibsDefined)),)
+   export aiResearchIncDir  := ${CoinIncDir}
+   export aiResearchLibDir  := ${CoinLibDir}
+   export aiResearchLibName := libaiResearch$(SHARED_LIBEXT)
+   export aiResearchDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiForecastGen,$(CoinLibsDefined)),)
+   export aiForecastGenIncDir  := ${CoinIncDir}
+   export aiForecastGenLibDir  := ${CoinLibDir}
+   export aiForecastGenLibName := libaiForecastGen$(SHARED_LIBEXT)
+   export aiForecastGenDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiMarketFields,$(CoinLibsDefined)),)
+   export aiMarketFieldsIncDir  := ${CoinIncDir}
+   export aiMarketFieldsLibDir  := ${CoinLibDir}
+   export aiMarketFieldsLibName := libaiMarketFields$(SHARED_LIBEXT)
+   export aiMarketFieldsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiMarketDbUtils,$(CoinLibsDefined)),)
+   export aiMarketDbUtilsIncDir  := ${CoinIncDir}
+   export aiMarketDbUtilsLibDir  := ${CoinLibDir}
+   export aiMarketDbUtilsLibName := libaiMarketDbUtils$(SHARED_LIBEXT)
+   export aiMarketDbUtilsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiDbAccounts,$(CoinLibsDefined)),)
+   export aiDbAccountsIncDir  := ${CoinIncDir}
+   export aiDbAccountsLibDir  := ${CoinLibDir}
+   export aiDbAccountsLibName := libaiDbAccounts$(SHARED_LIBEXT)
+   export aiDbAccountsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiMarketVars,$(CoinLibsDefined)),)
+   export aiMarketVarsIncDir  := ${CoinIncDir}
+   export aiMarketVarsLibDir  := ${CoinLibDir}
+   export aiMarketVarsLibName := libaiMarketVars$(SHARED_LIBEXT)
+   export aiMarketVarsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiFinUtils,$(CoinLibsDefined)),)
+   export aiFinUtilsIncDir  := ${CoinIncDir}
+   export aiFinUtilsLibDir  := ${CoinLibDir}
+   export aiFinUtilsLibName := libaiFinUtils$(SHARED_LIBEXT)
+   export aiFinUtilsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiForecastDb,$(CoinLibsDefined)),)
+   export aiForecastDbIncDir  := ${CoinIncDir}
+   export aiForecastDbLibDir  := ${CoinLibDir}
+   export aiForecastDbLibName := libaiForecastDb$(SHARED_LIBEXT)
+   export aiForecastDbDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiForecastFields,$(CoinLibsDefined)),)
+   export aiForecastFieldsIncDir  := ${CoinIncDir}
+   export aiForecastFieldsLibDir  := ${CoinLibDir}
+   export aiForecastFieldsLibName := libaiForecastFields$(SHARED_LIBEXT)
+   export aiForecastFieldsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiForecastUtils,$(CoinLibsDefined)),)
+   export aiForecastUtilsIncDir  := ${CoinIncDir}
+   export aiForecastUtilsLibDir  := ${CoinLibDir}
+   export aiForecastUtilsLibName := libaiForecastUtils$(SHARED_LIBEXT)
+   export aiForecastUtilsDefine  :=
+endif
+
+ifneq ($(filter COIN_libaiForecastDbUtils,$(CoinLibsDefined)),)
+   export aiForecastDbUtilsIncDir  := ${CoinIncDir}
+   export aiForecastDbUtilsLibDir  := ${CoinLibDir}
+   export aiForecastDbUtilsLibName := libaiForecastDbUtils$(SHARED_LIBEXT)
+   export aiForecastDbUtilsDefine  :=
+endif
+

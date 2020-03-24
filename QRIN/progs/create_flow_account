@@ -1,0 +1,8 @@
+svn copy OperatingRevenueAccount.cpp $1Account.cpp
+sed -i s/OperatingRevenue/$1/g $1Account.cpp
+cd include
+svn copy OperatingRevenueAccount.hpp $1Account.hpp
+sed -i s/OperatingRevenue/$1/g $1Account.hpp
+cd ..
+#svn ci -m "Created flow account: $1Account"
+echo "LIBSRC += $1Account.cpp" >> tmp

@@ -1,0 +1,33 @@
+#Usage: <cmd> <name of package without "ai" prefix>
+svn copy aiTemplate ai$1
+cd ai$1
+svn move Makefile.aiTemplate Makefile.ai$1
+svn move pkgTemplate.cpp pkg$1.cpp
+cd include
+svn move pkgTemplate.hpp pkg$1.hpp
+cd ..
+sed -i s/Template/$1/g Makefile
+sed -i s/Template/$1/g Makefile.ai$1
+sed -i s/Template/$1/g pkg$1.cpp
+sed -i s/Template/$1/g include/pkg$1.hpp
+sed -i s/Template/$1/g UnitTests/Makefile
+sed -i s/Template/$1/g UnitTests/Makefile.UnitTests
+cd ..
+
+echo "ifneq (\$(filter COIN_libai$1,\$(CoinLibsDefined)),)" >> Makefiles/Makefile.location
+echo "   export ai$1IncDir  := \${CoinIncDir}" >> Makefiles/Makefile.location
+echo "   export ai$1LibDir  := \${CoinLibDir}" >> Makefiles/Makefile.location
+echo "   export ai$1LibName := libai$1\$(SHARED_LIBEXT)" >> Makefiles/Makefile.location
+echo "   export ai$1Define  :=" >> Makefiles/Makefile.location
+echo "endif" >> Makefiles/Makefile.location
+echo "" >> Makefiles/Makefile.location
+echo ". \$1 ai$1" >> sc
+svn ci -m "Created package ai$1"
+
+cd ai$1
+make
+cd UnitTests
+make
+echo
+echo "Remember to modify Makefiles/Makefile.location by inserting the following line:"
+echo "CoinLibsDefined += COIN_libai$1"

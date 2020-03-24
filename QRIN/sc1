@@ -1,0 +1,12 @@
+
+export AI_HOME="${LSAHOME}"
+export COIN_HOME="${AI_HOME}/COIN"
+export PATH="${PATH}:${COIN_HOME}/progs"
+
+#cd $COIN_HOME
+
+. ./sc make_clean_sc
+. ./sc extract_include_files 
+. ./sc aimake
+. ./sc aimake_unittests
+. ./sc unittests

@@ -1,0 +1,10 @@
+growth:OperatingRevenue|G_OperatingRevenueAccount
+growth:CompEarnings|G_EPSAccount
+margin:GrossMargin|GrossMarginAccount
+margin:OperatingMargin|OperatingMarginAccount
+margin:EBITDAMargin|EBITDAMarginAccount
+margin:NetMargin|NetMarginAccount
+utilize:ComparableReturnAssetsEnding|ROAAccount
+utilize:ComparableReturnEquityEnding|ROEAccount
+utilize:AssetTurnover|AssetTOAccount
+leverage:NetDebtToEquity|R_Debt_EquityAccount

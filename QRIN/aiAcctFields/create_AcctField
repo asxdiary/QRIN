@@ -1,0 +1,4 @@
+#Usage: create_AcctField TotalAssets TemplatePositionAccount
+cat $2.cpp | sed s/$2/$1Account/g > $1Account.cpp
+cat include/$2.hpp | sed s/$2/$1Account/g > include/$1Account.hpp
+echo "LIBSRC += $1Account.cpp" >> tmp

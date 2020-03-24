@@ -1,0 +1,17 @@
+echo "#include \"Utils.hpp\"" >> Test$1.cpp
+echo "#include \"$1.hpp\"" >> Test$1.cpp
+echo "" >> Test$1.cpp
+echo "using namespace aiUtils;" >> Test$1.cpp
+echo "using namespace $2;" >> Test$1.cpp
+echo "" >> Test$1.cpp
+echo "int Test$1_main() { printf(\"UnitTest %s\n\",__FUNCTION__);" >> Test$1.cpp
+echo "   int val = 0;" >> Test$1.cpp
+echo "   const string ipfx = \"input/Test$1.\";" >> Test$1.cpp
+echo "   const string opfx = \"output/Test$1.\";" >> Test$1.cpp
+echo "" >> Test$1.cpp
+echo "   if(val>0) printf(\"UnitTest %s FAILED\n\",__FUNCTION__);" >> Test$1.cpp
+echo "" >> Test$1.cpp
+echo "   return val;" >> Test$1.cpp
+echo "}" >> Test$1.cpp
+echo "" >> Test$1.cpp
+echo "int Test$1_main();" >> ./include/Test$1.hpp

@@ -1,0 +1,3 @@
+o add functionality to clustering gen to generate kernels from input
+matrix X which can possibly be NULL
+

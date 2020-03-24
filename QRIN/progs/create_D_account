@@ -1,0 +1,8 @@
+svn copy D_TemplateAccount.cpp D_$1.cpp
+svn copy include/D_TemplateAccount.hpp include/D_$1.hpp
+sed -i s/TemplateAccount/$1/g D_$1.cpp
+sed -i s/TemplateFlowAccount/$1/g D_$1.cpp
+sed -i s/TemplateAccount/$1/g ./include/D_$1.hpp
+sed -i s/TemplateFlowAccount/$1/g ./include/D_$1.hpp
+echo "Add the following to Makefile.aiAcctVars"
+echo "LIBSRC += D_$1.cpp"

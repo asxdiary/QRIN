@@ -1,0 +1,4 @@
+#Usage <cmdname> <packageName>
+#This script helps to convert the makefiles so as to compile them with -O option
+
+sed -i "s/OptLevel := \-g/OptLevel := \-O/g" $1/Makefile.$1

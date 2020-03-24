@@ -1,0 +1,1 @@
+int TestCompany_main();

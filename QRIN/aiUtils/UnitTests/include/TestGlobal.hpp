@@ -1,0 +1,1 @@
+int TestGlobal_main();

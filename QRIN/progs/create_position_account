@@ -1,0 +1,8 @@
+svn copy TotalAssetsAccount.cpp $1Account.cpp
+sed -i s/TotalAssets/$1/g $1Account.cpp
+cd include
+svn copy TotalAssetsAccount.hpp $1Account.hpp
+sed -i s/TotalAssets/$1/g $1Account.hpp
+cd ..
+#svn ci -m "Created position account: $1Account"
+echo "LIBSRC += $1Account.cpp" >> tmp

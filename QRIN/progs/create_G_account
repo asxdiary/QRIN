@@ -1,0 +1,8 @@
+svn copy G_TemplateAccount.cpp G_$1.cpp
+svn copy include/G_TemplateAccount.hpp include/G_$1.hpp
+sed -i s/TemplateAccount/$1/g G_$1.cpp
+sed -i s/TemplatePositionAccount/$1/g G_$1.cpp
+sed -i s/TemplateAccount/$1/g ./include/G_$1.hpp
+sed -i s/TemplatePositionAccount/$1/g ./include/G_$1.hpp
+echo "Add the following to Makefile.aiAcctVars"
+echo "LIBSRC += G_$1.cpp"

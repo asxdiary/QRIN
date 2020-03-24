@@ -1,0 +1,2 @@
+create_R_account $1 $2 $3
+create_D_account $1

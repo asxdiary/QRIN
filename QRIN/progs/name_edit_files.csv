@@ -1,0 +1,5 @@
+#These files need to be modified every time a specialized branch is created
+
+aiUtils/include/Utils.hpp
+aiUtils/notes/Global.objm
+aiUtils/Global.cpp

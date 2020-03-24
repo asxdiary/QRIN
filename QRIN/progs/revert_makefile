@@ -1,0 +1,4 @@
+#Usage <cmdname> <packageName>
+#This script reverses all changes to the makefiles
+
+svn revert $1/Makefile.$1

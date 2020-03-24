@@ -1,0 +1,5 @@
+cd $1
+echo "$(basename $BASH_SOURCE) $1 starting"
+make > ~/tmp/junk
+echo "$(basename $BASH_SOURCE) $1 done"
+cd ..

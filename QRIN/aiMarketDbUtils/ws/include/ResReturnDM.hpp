@@ -1,0 +1,1 @@
+int ResReturnDM_main();

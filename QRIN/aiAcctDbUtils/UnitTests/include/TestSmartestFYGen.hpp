@@ -1,0 +1,1 @@
+int TestSmartestFYGen_main();

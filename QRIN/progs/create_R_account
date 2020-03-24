@@ -1,0 +1,16 @@
+#Usage <cmdname> <AccountName> <NumeratorAccount> <DenominatorAccount>
+
+svn copy R_TemplateAccount.cpp $1.cpp
+sed -i s/R_TemplateAccount/$1/g $1.cpp
+sed -i s/TemplateFlowAccount/$2/g $1.cpp
+sed -i s/TemplatePositionAccount/$3/g $1.cpp
+
+cd include
+svn copy R_TemplateAccount.hpp $1.hpp
+sed -i s/R_TemplateAccount/$1/g $1.hpp
+sed -i s/TemplateFlowAccount/$2/g $1.hpp
+sed -i s/TemplatePositionAccount/$3/g $1.hpp
+cd ..
+
+echo "Add the following to Makefile.aiAcctVars"
+echo "LIBSRC += $1.cpp"

@@ -1,0 +1,117 @@
+# Static or shared libraries should be built (STATIC or SHARED)?
+LibType := SHARED
+
+# Select optimization (-O or -g). -O will be automatically bumped up to the 
+# highest level of optimization the compiler supports. If want something in
+# between then specify the exact level you want, e.g., -O1 or -O2
+#OptLevel := -O2
+#OptLevel := -O
+OptLevel := -g
+
+LIBNAME := aiAcctVars
+
+LIBSRC := 
+LIBSRC += pkgAcctVars.cpp
+
+LIBSRC += G_TemplateAccount.cpp
+LIBSRC += D_TemplateAccount.cpp
+LIBSRC += R_TemplateAccount.cpp
+
+LIBSRC += WorkingCapitalAccount.cpp
+
+LIBSRC += G_OperatingRevenueAccount.cpp
+LIBSRC += D_G_OperatingRevenueAccount.cpp
+
+LIBSRC += G_EPSAccount.cpp
+LIBSRC += D_G_EPSAccount.cpp
+
+LIBSRC += GrossMarginAccount.cpp
+LIBSRC += D_GrossMarginAccount.cpp
+
+LIBSRC += OperatingMarginAccount.cpp
+LIBSRC += D_OperatingMarginAccount.cpp
+
+LIBSRC += EBITDAMarginAccount.cpp
+LIBSRC += D_EBITDAMarginAccount.cpp
+
+LIBSRC += ResearchDevelopmentIntensityAccount.cpp
+LIBSRC += D_ResearchDevelopmentIntensityAccount.cpp
+
+LIBSRC += NetMarginAccount.cpp
+LIBSRC += D_NetMarginAccount.cpp
+
+LIBSRC += ROEAccount.cpp
+LIBSRC += D_ROEAccount.cpp
+
+LIBSRC += ROAAccount.cpp
+LIBSRC += D_ROAAccount.cpp
+
+LIBSRC += R_NetInterestExpense_OperatingProfitAccount.cpp
+LIBSRC += D_R_NetInterestExpense_OperatingProfitAccount.cpp
+
+LIBSRC += R_Debt_EquityAccount.cpp
+LIBSRC += D_R_Debt_EquityAccount.cpp
+
+LIBSRC += CurrentRatioIAccount.cpp
+LIBSRC += D_CurrentRatioIAccount.cpp
+
+LIBSRC += R_Cash_WCAccount.cpp
+LIBSRC += D_R_Cash_WCAccount.cpp
+
+LIBSRC += R_Liabilities_AssetsAccount.cpp
+LIBSRC += D_R_Liabilities_AssetsAccount.cpp
+
+LIBSRC += InventoryTOAccount.cpp
+LIBSRC += DIOAccount.cpp
+LIBSRC += D_DIOAccount.cpp
+
+LIBSRC += ReceivablesTOAccount.cpp
+LIBSRC += DSOAccount.cpp
+LIBSRC += D_DSOAccount.cpp
+
+LIBSRC += PayablesTOAccount.cpp
+LIBSRC += DPOAccount.cpp
+LIBSRC += D_DPOAccount.cpp
+
+LIBSRC += CCCAccount.cpp
+LIBSRC += D_CCCAccount.cpp
+
+LIBSRC += AssetTOAccount.cpp
+LIBSRC += D_AssetTOAccount.cpp
+
+#
+
+
+
+##############################################################################
+# You should not need to edit below this line.
+##############################################################################
+# The location of the customized Makefiles
+include ${MakefileDir}/Makefile.coin
+include ${MakefileDir}/Makefile.location
+ifeq ($(OptLevel),-g)
+#     CXXFLAGS += -DAsxaiAcctVars_DEBUG
+endif
+#    CXXFLAGS += -DAsxaiAcctVars_DEBUG
+
+#    CXXFLAGS += -pg
+export ExtraIncDir  := ${OsiIncDir} ${CoinIncDir} ${MosekIncDir}
+export ExtraLibDir  := ${OsiLibDir} ${CoinLibDir} ${MosekLibDir}
+export ExtraLibName := ${OsiLibName} ${CoinLibName} ${MosekLibName}
+export ExtraDefine  := ${OsiDefine} ${CoinDefine} ${MosekDefine}
+
+
+export LibType OptLevel LIBNAME LIBSRC 
+
+###############################################################################
+
+.DELETE_ON_ERROR:
+
+.PHONY: default install library
+
+default: install
+
+install library :
+	$(MAKE) -f ${MakefileDir}/Makefile.lib $@
+
+

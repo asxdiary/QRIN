@@ -1,0 +1,16 @@
+#Usage: cmd path setup-name number-of-transponders
+mkdir $1/pkg_$2 2>/dev/null 
+mkdir $1/pkg_$2/reports 2>/dev/null
+cp -R forecasts $1/pkg_$2/
+cd $1/pkg_$2
+#tar -zcvf forecasts.tgz forecasts >/dev/null
+#rm -rf forecasts
+cd $1
+#gen_ic $1 $2 $3
+#gen_R2_cf $1 $2 $3
+gen_glam $1 $2
+#gen_bbfc $1 $2 $3
+#gen_fc_compare $1 $2
+#gen_decile $1 $2
+#gen_fc_autocor $1 $2
+#gen_median_sigmoid $1 $2
